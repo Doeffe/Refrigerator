@@ -82,3 +82,12 @@ C:\Users\doeff\Documents\Repositories\Refrigerator\RefrigeratorAPI\obj\Debug\Ref
 C:\Users\doeff\Documents\Repositories\Refrigerator\RefrigeratorAPI\obj\Debug\RefrigeratorAPI.csproj.CopyComplete
 C:\Users\doeff\Documents\Repositories\Refrigerator\RefrigeratorAPI\obj\Debug\RefrigeratorAPI.dll
 C:\Users\doeff\Documents\Repositories\Refrigerator\RefrigeratorAPI\obj\Debug\RefrigeratorAPI.pdb
+C:\Users\doeff\Documents\Repositories\Refrigerator\RefrigeratorAPI\bin\EntityFramework.dll
+C:\Users\doeff\Documents\Repositories\Refrigerator\RefrigeratorAPI\bin\EntityFramework.SqlServer.dll
+C:\Users\doeff\Documents\Repositories\Refrigerator\RefrigeratorAPI\bin\EntityFramework.xml
+C:\Users\doeff\Documents\Repositories\Refrigerator\RefrigeratorAPI\bin\EntityFramework.SqlServer.xml
+C:\Users\doeff\Documents\Repositories\Refrigerator\RefrigeratorAPI\bin\System.Web.Cors.dll
+C:\Users\doeff\Documents\Repositories\Refrigerator\RefrigeratorAPI\bin\System.Web.Http.Cors.dll
+C:\Users\doeff\Documents\Repositories\Refrigerator\RefrigeratorAPI\bin\System.Web.Http.Cors.xml
+C:\Users\doeff\Documents\Repositories\Refrigerator\RefrigeratorAPI\obj\Debug\RefrigeratorAPI.Migrations.updatedinit.resources
+C:\Users\doeff\Documents\Repositories\Refrigerator\RefrigeratorAPI\obj\Debug\RefrigeratorAPI.csproj.GenerateResource.cache
