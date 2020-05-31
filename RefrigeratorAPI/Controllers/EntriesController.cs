@@ -18,6 +18,26 @@ namespace RefrigeratorAPI.Controllers
     {
 
         [HttpGet]
+        public IHttpActionResult GetEntry(int id)
+        {            
+            try
+            {             
+                using (var context = new AppDbContext())
+                {
+                    var entry = context.Entries.FirstOrDefault(n => n.Id == id);
+                    if (entry == null) return NotFound();         
+
+                    return Ok(entry);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet]
         public IHttpActionResult GetEntries()
         {
             try
@@ -57,7 +77,6 @@ namespace RefrigeratorAPI.Controllers
             }       
         }
 
-
         [HttpPut]
         public IHttpActionResult UpdateEntry(int id, [FromBody]Entry entry)
         {
@@ -81,7 +100,32 @@ namespace RefrigeratorAPI.Controllers
 
                     context.SaveChanges();
 
-                    return Ok("Entry updated");
+                    return Ok("Ok");
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpDelete]
+        public IHttpActionResult DeleteEntry(int id)
+        {
+
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+
+            try
+            {
+                using (var context = new AppDbContext())
+                {
+                    var entry = context.Entries.FirstOrDefault(n => n.Id == id);
+                    if (entry == null) return NotFound();
+
+                    context.Entries.Remove(entry);
+                    context.SaveChanges();
+
+                    return Ok("Entry deleted");
                 }
             }
             catch (Exception ex)

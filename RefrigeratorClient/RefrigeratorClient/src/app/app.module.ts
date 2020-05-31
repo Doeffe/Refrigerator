@@ -21,10 +21,14 @@ import {MatCardModule} from '@angular/material/card'
 import {MatSelectModule} from '@angular/material/select'
 import {MatToolbarModule} from '@angular/material/toolbar'
 import {MatDialogModule} from '@angular/material/dialog'
+import {MatListModule} from '@angular/material/list'
+
 
 // forms 
 import {ReactiveFormsModule} from '@angular/forms'
 import { from } from 'rxjs';
+import { UpdateEntryComponent } from './update-entry/update-entry.component';
+import { DeleteEntryComponent } from './delete-entry/delete-entry.component';
 
 
 @NgModule({
@@ -33,17 +37,21 @@ import { from } from 'rxjs';
     EntriesComponent,
     FooterComponent,
     HeaderComponent,
-    NewEntryComponent, 
+    NewEntryComponent,
+    UpdateEntryComponent,
+    DeleteEntryComponent, 
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRouterModule,
     // material design
-    BrowserAnimationsModule, MatButtonModule, MatTableModule, MatInputModule, MatCardModule, MatSelectModule, MatToolbarModule, MatDialogModule,
+    BrowserAnimationsModule, MatButtonModule, MatTableModule, MatInputModule, MatCardModule, 
+    MatSelectModule, MatToolbarModule, MatDialogModule, MatListModule,
     //forms
     ReactiveFormsModule
   ],
+  entryComponents:[UpdateEntryComponent],
   providers: [EntryService],
   bootstrap: [AppComponent]
 })
