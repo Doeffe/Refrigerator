@@ -33,6 +33,9 @@ export class NewEntryComponent {
     this.service.createEntry(this.entryForm.value).subscribe((data) => {
       console.log('Data -', data);
     });
+    // reset state
+    this.entryForm.reset();    
+
   }
 
 }
