@@ -1,4 +1,5 @@
 ﻿using RefrigeratorAPI.Data;
+using RefrigeratorAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -15,6 +16,8 @@ namespace RefrigeratorAPI.Controllers
     [EnableCors("*", "*", "*")]
     public class EntriesController : ApiController
     {
+
+        [HttpGet]
         public IHttpActionResult GetEntries()
         {
             try
@@ -30,6 +33,61 @@ namespace RefrigeratorAPI.Controllers
                 Debug.WriteLine(ex.Message);
                 return BadRequest(ex.Message);               
             }          
+        }
+
+        [HttpPost]
+        public IHttpActionResult PostEntry([FromBody]Entry entry)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            try
+            {
+                using (var context = new AppDbContext())
+                {
+                    context.Entries.Add(entry);
+                    context.SaveChanges();
+
+                    return Ok("Entry was created.");
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }       
+        }
+
+
+        [HttpPut]
+        public IHttpActionResult UpdateEntry(int id, [FromBody]Entry entry)
+        {
+            // check request states
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+            if (id != entry.Id) return BadRequest();
+
+            try
+            {
+                using (var context = new AppDbContext())
+                {
+                    var oldEntry = context.Entries.FirstOrDefault(n => n.Id == id);
+                    if (oldEntry == null) return NotFound();
+
+                    // update entry
+                    oldEntry.Category = entry.Category;
+                    oldEntry.Description = entry.Description;
+                    oldEntry.IsExpense = entry.IsExpense;
+                    oldEntry.Value = entry.Value;
+                    oldEntry.Unit = entry.Unit;
+
+                    context.SaveChanges();
+
+                    return Ok("Entry updated");
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

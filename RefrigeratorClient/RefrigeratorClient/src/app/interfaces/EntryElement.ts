@@ -2,6 +2,6 @@ export interface EntryElement{
     Category:string;
     Description:string;
     IsExpense:boolean;
-    Quantitative:number;
+    Value:number;
     Unit:string;
 }

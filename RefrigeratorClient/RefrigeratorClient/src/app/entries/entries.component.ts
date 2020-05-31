@@ -10,7 +10,7 @@ import { EntryElement } from '../interfaces/EntryElement';
 })
 export class EntriesComponent implements OnInit {
 
-  displayedColumns: string[] = ["category","description","isExpense","unit","description",] ;
+  displayedColumns: string[] = ["Category","Description","IsExpense","Quantitative","Unit"] ;
   dataSource;
 
   constructor(private service:EntryService ) { }
@@ -20,9 +20,7 @@ export class EntriesComponent implements OnInit {
     this.service.getAll().subscribe((data) => { 
       console.log('Result - ', data);
 
-      this.dataSource = new MatTableDataSource<EntryElement>(data as EntryElement[]); 
-     
-      console.log("hej ", this.dataSource);
+      this.dataSource = new MatTableDataSource<EntryElement>(data as EntryElement[]);    
 
     });
 

@@ -12,25 +12,37 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRouterModule } from './app-router.module';
 
 // material modules
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
+import {NewEntryComponent } from './new-entry/new-entry.component';
+import {MatInputModule} from '@angular/material/input'
+import {MatCardModule} from '@angular/material/card'
+import {MatSelectModule} from '@angular/material/select'
+import {MatToolbarModule} from '@angular/material/toolbar'
+import {MatDialogModule} from '@angular/material/dialog'
+
+// forms 
+import {ReactiveFormsModule} from '@angular/forms'
+import { from } from 'rxjs';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     EntriesComponent,
     FooterComponent,
-    HeaderComponent, 
+    HeaderComponent,
+    NewEntryComponent, 
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRouterModule,
     // material design
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatTableModule,
+    BrowserAnimationsModule, MatButtonModule, MatTableModule, MatInputModule, MatCardModule, MatSelectModule, MatToolbarModule, MatDialogModule,
+    //forms
+    ReactiveFormsModule
   ],
   providers: [EntryService],
   bootstrap: [AppComponent]

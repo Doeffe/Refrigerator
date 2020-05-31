@@ -89,5 +89,3 @@ C:\Users\doeff\Documents\Repositories\Refrigerator\RefrigeratorAPI\bin\EntityFra
 C:\Users\doeff\Documents\Repositories\Refrigerator\RefrigeratorAPI\bin\System.Web.Cors.dll
 C:\Users\doeff\Documents\Repositories\Refrigerator\RefrigeratorAPI\bin\System.Web.Http.Cors.dll
 C:\Users\doeff\Documents\Repositories\Refrigerator\RefrigeratorAPI\bin\System.Web.Http.Cors.xml
-C:\Users\doeff\Documents\Repositories\Refrigerator\RefrigeratorAPI\obj\Debug\RefrigeratorAPI.Migrations.updatedinit.resources
-C:\Users\doeff\Documents\Repositories\Refrigerator\RefrigeratorAPI\obj\Debug\RefrigeratorAPI.csproj.GenerateResource.cache
