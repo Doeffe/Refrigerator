@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { EntriesComponent } from './entries/entries.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { IndexComponent } from './index/index.component'
 
 // services
 import { EntryService } from './entry.service';
@@ -30,12 +31,10 @@ import {MatDialogModule} from '@angular/material/dialog'
 import {MatListModule} from '@angular/material/list'
 import {MatSortModule} from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatIconModule} from '@angular/material/icon'
 
 // forms 
-import { ReactiveFormsModule, FormsModule} from '@angular/forms'
-
-
-
+import { ReactiveFormsModule, FormsModule} from '@angular/forms';
 
 
 
@@ -49,8 +48,8 @@ import { ReactiveFormsModule, FormsModule} from '@angular/forms'
     UpdateEntryComponent,
     DeleteEntryComponent,
     RegistreComponent,
-    LoginComponent, 
-   
+    LoginComponent,
+    IndexComponent,    
   ],
   imports: [
     BrowserModule,
@@ -59,6 +58,7 @@ import { ReactiveFormsModule, FormsModule} from '@angular/forms'
     // material design
     BrowserAnimationsModule, MatButtonModule, MatTableModule, MatInputModule, MatCardModule, 
     MatSelectModule, MatToolbarModule, MatDialogModule, MatListModule, MatSortModule, MatPaginatorModule,
+    MatIconModule,
     //forms
     ReactiveFormsModule, FormsModule
   ],

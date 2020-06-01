@@ -6,6 +6,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { UpdateEntryComponent } from '../update-entry/update-entry.component';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-entries',
@@ -22,7 +24,7 @@ export class EntriesComponent implements OnInit {
   @ViewChild(MatPaginator) paginator : MatPaginator;
 
   // constructor
-  constructor(private service:EntryService, private dialog:MatDialog ) { }
+  constructor(private service:EntryService, private dialog:MatDialog ,private router:Router) { }
 
   
   ngOnInit(): void {    
@@ -53,7 +55,13 @@ export class EntriesComponent implements OnInit {
   }
 
   deleteEntry(entry){
-    console.log(entry);    
-  }
+    this.service.deleteEntry(entry).subscribe((data:any) => { }, (err) => alert(err.error.Message));
+    // refresh list after deleting an item   
+     
+    this.router.navigate(['/entries'])
+ 
+  };
 
 }
+
+

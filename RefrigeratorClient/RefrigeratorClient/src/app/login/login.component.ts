@@ -12,14 +12,15 @@ export class LoginComponent {
   loginData = {
     username:'',
     password:''
-  }
+  } 
 
-  constructor(private service:AuthService, private router:Router) { }
+  constructor(private service:AuthService, private router:Router) { 
+
+  }
 
   login(){   
     // subscribe data from service
-    this.service.login(this.loginData).subscribe((data:any) => {
-      
+    this.service.login(this.loginData).subscribe((data:any) => {      
       // store token and username locally
       localStorage.setItem('username', data.Username);
       localStorage.setItem('token', data.Token);
