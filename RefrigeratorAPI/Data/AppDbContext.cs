@@ -15,6 +15,7 @@ namespace RefrigeratorAPI.Data
         }
 
         public DbSet<Entry> Entries { get; set;}
+        public DbSet<User> Users { get; set; }
 
     }
 }
