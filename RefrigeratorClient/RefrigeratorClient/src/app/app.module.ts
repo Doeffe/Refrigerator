@@ -18,21 +18,23 @@ import { AppRouterModule } from './app-router.module';
 import { AuthService } from './auth.service';
 
 // material modules
-import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
-import {NewEntryComponent } from './new-entry/new-entry.component';
+import {NewEntryComponent} from './new-entry/new-entry.component';
 import {MatInputModule} from '@angular/material/input'
 import {MatCardModule} from '@angular/material/card'
 import {MatSelectModule} from '@angular/material/select'
 import {MatToolbarModule} from '@angular/material/toolbar'
 import {MatDialogModule} from '@angular/material/dialog'
 import {MatListModule} from '@angular/material/list'
-
-
+import {MatSortModule} from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 // forms 
 import { ReactiveFormsModule, FormsModule} from '@angular/forms'
+
+
 
 
 
@@ -56,7 +58,7 @@ import { ReactiveFormsModule, FormsModule} from '@angular/forms'
     AppRouterModule,
     // material design
     BrowserAnimationsModule, MatButtonModule, MatTableModule, MatInputModule, MatCardModule, 
-    MatSelectModule, MatToolbarModule, MatDialogModule, MatListModule,
+    MatSelectModule, MatToolbarModule, MatDialogModule, MatListModule, MatSortModule, MatPaginatorModule,
     //forms
     ReactiveFormsModule, FormsModule
   ],
