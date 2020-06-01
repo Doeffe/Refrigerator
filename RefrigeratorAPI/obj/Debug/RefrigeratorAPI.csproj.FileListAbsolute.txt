@@ -89,3 +89,13 @@ C:\Users\doeff\Documents\Repositories\Refrigerator\RefrigeratorAPI\bin\EntityFra
 C:\Users\doeff\Documents\Repositories\Refrigerator\RefrigeratorAPI\bin\System.Web.Cors.dll
 C:\Users\doeff\Documents\Repositories\Refrigerator\RefrigeratorAPI\bin\System.Web.Http.Cors.dll
 C:\Users\doeff\Documents\Repositories\Refrigerator\RefrigeratorAPI\bin\System.Web.Http.Cors.xml
+C:\Users\doeff\Documents\Repositories\Refrigerator\RefrigeratorAPI\obj\Debug\RefrigeratorAPI.Migrations.userAdded.resources
+C:\Users\doeff\Documents\Repositories\Refrigerator\RefrigeratorAPI\obj\Debug\RefrigeratorAPI.csproj.GenerateResource.cache
+C:\Users\doeff\Documents\Repositories\Refrigerator\RefrigeratorAPI\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\doeff\Documents\Repositories\Refrigerator\RefrigeratorAPI\bin\Microsoft.IdentityModel.Logging.dll
+C:\Users\doeff\Documents\Repositories\Refrigerator\RefrigeratorAPI\bin\Microsoft.IdentityModel.Tokens.dll
+C:\Users\doeff\Documents\Repositories\Refrigerator\RefrigeratorAPI\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\doeff\Documents\Repositories\Refrigerator\RefrigeratorAPI\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\doeff\Documents\Repositories\Refrigerator\RefrigeratorAPI\bin\Microsoft.IdentityModel.Logging.xml
+C:\Users\doeff\Documents\Repositories\Refrigerator\RefrigeratorAPI\bin\Microsoft.IdentityModel.Tokens.xml
+C:\Users\doeff\Documents\Repositories\Refrigerator\RefrigeratorAPI\bin\System.IdentityModel.Tokens.Jwt.xml
