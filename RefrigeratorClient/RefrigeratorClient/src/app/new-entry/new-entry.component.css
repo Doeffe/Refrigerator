@@ -12,6 +12,20 @@
     margin-right: 20%;
 }
 
+.new-entry-field-value{  
+    margin-left: 20%;
+    margin-right: 20%;   
+    float:center;
+}
+
 .new-form-body{
     position: relative;
 }
+
+.mat-raised-button{    
+    float: inline-end;
+    position: relative;
+    vertical-align: middle;
+}
+
+

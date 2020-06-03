@@ -6,6 +6,7 @@
     using System.Data.Entity.Migrations;
     using System.Linq;
 
+
     internal sealed class Configuration : DbMigrationsConfiguration<RefrigeratorAPI.Data.AppDbContext>
     {
         public Configuration()
@@ -21,20 +22,28 @@
             //  to avoid creating duplicate seed data.
             context.Entries.Add(new Entry
             {
-                Category = "Pålæg",
+                Category = EntityUtilities.EntityCategory.OtherFoods,
                 Description = "Rullepølse",
                 IsExpense = false,
                 Value = 20,
-                Unit = "pk"
+                Price = 10,
+                Unit = EntityUtilities.UnitType.pk
             });
 
             context.Entries.Add(new Entry
             {
-                Category = "Mejeri Produkter",
+                Category = EntityUtilities.EntityCategory.Dairy,
                 Description = "Mælk",
                 IsExpense = true,
-                Value = 11.5,
-                Unit = "l"
+                Value = 1,
+                Price = 10,
+                Unit = EntityUtilities.UnitType.l
+            });
+
+            context.Users.Add(new User
+            {
+                UserName = "Nicolai",
+                Password = "n"
             });
         }
     }

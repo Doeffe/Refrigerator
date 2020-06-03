@@ -24,7 +24,7 @@ namespace RefrigeratorAPI.Controllers
             {             
                 using (var context = new AppDbContext())
                 {
-                    var entry = context.Entries.FirstOrDefault(n => n.Id == id);
+                    var entry = context.Entries.FirstOrDefault(n => n.Id == id);                    
                     if (entry == null) return NotFound();         
 
                     return Ok(entry);
@@ -56,7 +56,7 @@ namespace RefrigeratorAPI.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult PostEntry([FromBody]Entry entry)
+        public IHttpActionResult CreateEntity([FromBody]Entry entry)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -64,7 +64,7 @@ namespace RefrigeratorAPI.Controllers
             try
             {
                 using (var context = new AppDbContext())
-                {
+                {                    
                     context.Entries.Add(entry);
                     context.SaveChanges();
 

@@ -1,11 +1,16 @@
 <mat-card>
 
-    <span>Create new entry</span>
+    <span style="margin-left: 20;">Create new entry</span>
 
     <form [formGroup]="entryForm" (ngSubmit)="onSubmit()">
 
         <mat-form-field class="new-entry-field" >
-            <input matInput placeholder="Entry Category" formControlName="category">
+            <mat-select placeholder="Category" formControlName="category">
+                <mat-option *ngFor="let cat of keys(categories)" [value]="cat">
+                    {{categories[cat]}}
+                </mat-option>
+            </mat-select>
+           <!--  <input matInput placeholder="Entry Category" formControlName="category"> -->
         </mat-form-field>
 
         <mat-form-field class="new-entry-field">
@@ -20,16 +25,33 @@
             </mat-select>
         </mat-form-field>
 
-        <mat-form-field class="new-entry-field">
-            <input matInput placeholder="Quantitative" formControlName="value">
-        </mat-form-field>
+        <div class="new-entry-field-value">
+            <mat-form-field >    
+                <input matInput value="{{entryForm.value.value}}" placeholder="Stock" formControlName="value" type="number">               
+            </mat-form-field>
+                        
+            <button (click)="increment()" mat-raised-button style="color: green; "  >
+                <mat-icon >add</mat-icon>
+            </button> 
+            <button (click)="decrement()"  mat-raised-button style="color: red; margin-left:5px;"   >
+                <mat-icon >remove</mat-icon>
+            </button> 
+        </div>
+       
         
         <mat-form-field class="new-entry-field">
-            <input matInput placeholder="Unit" formControlName="unit">
+            <mat-select placeholder="Unit" formControlName="unit">
+                <mat-option *ngFor="let u of keys(unitTypes)" [value]="u">
+                    {{unitTypes[u]}}
+                </mat-option>
+            </mat-select>
+
         </mat-form-field>
 
-        <button mat-raised-button [disabled]="!entryForm.valid">
+        <button mat-raised-button [disabled]="!entryForm.valid" style="margin-left: 20%;">
             Create new 
         </button>
     </form>
+  
+      
 </mat-card>

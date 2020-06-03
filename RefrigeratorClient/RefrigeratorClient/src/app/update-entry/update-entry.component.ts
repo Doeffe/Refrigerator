@@ -13,11 +13,11 @@ import { EntryService } from '../entry.service';
 export class UpdateEntryComponent implements OnInit {
 
   form:FormGroup;
-  id:number;
+  id:number;  
 
   constructor(private fb:FormBuilder, 
               private dialogRef:MatDialogRef<UpdateEntryComponent>, 
-              @Inject(MAT_DIALOG_DATA) {Category,Description,IsExpense,Value,Unit,Id},
+              @Inject(MAT_DIALOG_DATA) {Category,Description,IsExpense,Value,Unit,Id,Price},
               private sevice:EntryService) { 
                 // retrieve id of current entry
                 this.id = Id;
@@ -27,6 +27,7 @@ export class UpdateEntryComponent implements OnInit {
                   isExpense: [IsExpense, Validators.required],
                   value: [Value, Validators.required],
                   unit: [Unit, Validators.required],
+                  price:[Price, Validators.required]
                 });
               }
 

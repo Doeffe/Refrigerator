@@ -9,9 +9,11 @@ import {HttpClient} from '@angular/common/http';
 export class EntryService {
 
   // entry service controller
-  baseUrl: string = 'https://localhost:44317/api/entries'
+  baseUrl: string = 'https://localhost:44317/api/entries' 
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) { 
+   
+  }
 
   // get entry
   getEntry(id){
@@ -34,4 +36,7 @@ export class EntryService {
   deleteEntry(id){
     return this.http.delete(this.baseUrl + '/' + id);
   }
+
+
+
 }

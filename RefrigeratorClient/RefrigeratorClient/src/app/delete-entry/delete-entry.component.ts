@@ -39,14 +39,14 @@ export class DeleteEntryComponent implements OnInit {
   }
 
   cancel(){
-    this.router.navigate(['/'])
+    this.router.navigate(['/entries'])
   }
 
   confirm(){
     this.service.deleteEntry(this.id).subscribe((data)=> {
       console.log('data - ', data);
     });
-    this.router.navigate(['/']);
+    this.router.navigate(['/entries']);
   }
 
 }

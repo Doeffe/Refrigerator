@@ -7,6 +7,9 @@ import { UpdateEntryComponent } from '../update-entry/update-entry.component';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { Router } from '@angular/router';
+import { EntityCategory, UnitType } from '../new-entry/new-entry.component';
+import { CommonModule} from '@angular/common';
+
 
 
 @Component({
@@ -16,8 +19,12 @@ import { Router } from '@angular/router';
 })
 export class EntriesComponent implements OnInit {
 
-  displayedColumns: string[] = ["Category","Description","IsExpense","Quantitative","Unit", "Actions"] ;
+  displayedColumns: string[] = ["Category","Description","IsExpense","Stock","Unit","Price", "Actions"] ;
   dataSource;
+
+  // enums
+  categories = EntityCategory;
+  units = UnitType;
 
   // children views
   @ViewChild(MatSort) sort : MatSort;
@@ -28,8 +35,14 @@ export class EntriesComponent implements OnInit {
 
   
   ngOnInit(): void {    
-    this.service.getAll().subscribe((data) => { 
-      console.log('Result - ', data);
+    this.service.getAll().subscribe((data:any) => {        
+
+      // convert enums from backend to angular representation
+      data.forEach(e => {        
+        e.Category = this.getkeyFromEnum(e.Category,this.categories);
+        e.Unit = this.getkeyFromEnum(e.Unit,this.units);
+      });          
+     
       this.dataSource = new MatTableDataSource<EntryElement>(data as EntryElement[]); 
       this.dataSource.paginator = this.paginator;
     });
@@ -40,16 +53,16 @@ export class EntriesComponent implements OnInit {
   }
 
   // update an entry
-  updateEntry(entry){
+  updateEntry(entry:EntryElement){
     console.log(entry);
     this.dialog.open(UpdateEntryComponent, {
-      data:{
-        Id:entry.Id,
+      data:{    
         Category:entry.Category,
         Description:entry.Description,
         IsExpense:entry.IsExpense,
         Value:entry.Value,
-        Unit:entry.Unit
+        Unit:entry.Unit,
+        Price:entry.Price,
       }
     });
   }
@@ -62,6 +75,15 @@ export class EntriesComponent implements OnInit {
  
   };
 
+  // translate backend enum posistions to angular enums
+  getkeyFromEnum(index, enums){           
+    return Object.keys(enums)[index]; 
+  }
+
+  
+
 }
+
+
 
 
